@@ -1,0 +1,7 @@
+{
+  "require": {
+    "brain/hierarchy": "^2.3",
+    "duncan3dc/blade": "^4.0",
+    "twig/twig": "^2.4"
+  }
+}

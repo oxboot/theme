@@ -1,11 +1,9 @@
 <?php
 
 return [
-
-    'paths' => [
-        get_theme_file_path().'/views',
-        get_parent_theme_file_path().'/views',
+    'template_engines' => [
+        'Blade' => '.blade.php',
+        'Twig' => '.twig',
+        'PHP' => '.php',
     ],
-
-    'compiled' => wp_upload_dir()['basedir'].'/cache'
 ];
