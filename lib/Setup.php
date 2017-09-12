@@ -33,7 +33,7 @@ class Setup
             /**
              * Make theme available for translation
              */
-            load_theme_textdomain('oxboot', OX_THEME_ROOT.'/lang');
+            load_theme_textdomain('theme', get_template_directory() . '/lang');
 
             /**
              * Enable plugins to manage the document title
