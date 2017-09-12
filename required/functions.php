@@ -45,6 +45,18 @@ $config = [
     'view' => require CONFIG.'/view.php',
 ];
 
+function asset_path($asset)
+{
+    return get_template_directory_uri().'/../dist/styles/'.$asset;
+}
+
+/**
+ * Theme assets
+ */
+add_action('wp_enqueue_scripts', function () {
+    wp_enqueue_style('theme/main.css', asset_path('main.css'), false, null);
+}, 100);
+
 add_action('template_redirect', function () use ($config) {
     $templates = (new Brain\Hierarchy\Hierarchy())->getTemplates();
     $template_engines = $config['view']['template_engines'];
