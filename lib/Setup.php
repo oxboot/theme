@@ -33,7 +33,7 @@ class Setup
             /**
              * Make theme available for translation
              */
-            load_theme_textdomain('oxboot', THEME.'/lang');
+            load_theme_textdomain('oxboot', OX_THEME_ROOT.'/lang');
 
             /**
              * Enable plugins to manage the document title
@@ -81,7 +81,7 @@ class Setup
              * Use main stylesheet for visual editor
              * @see assets/styles/layouts/_tinymce.scss
              */
-            add_editor_style(THEME.'/dist/css/main.css');
+            add_editor_style(OX_THEME_ROOT.'/dist/css/main.css');
         }, 20);
 
         /**

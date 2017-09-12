@@ -34,21 +34,21 @@ define('DS', '/');
  * [en] Determine the base theme directory
  * [ru] Определяем базовую папку темы
  */
-define('THEME', str_replace(DIRECTORY_SEPARATOR, DS, __DIR__));
+define('OX_THEME_ROOT', str_replace(DIRECTORY_SEPARATOR, DS, __DIR__));
 
 /**
  * [en] Determine the config, cache & views
  * [ru] Устанавливаем папки для настроек, кеша и шаблонов
  */
-define('CONFIG', THEME.'/config');
-define('CACHE', WP_CONTENT_DIR.'/cache');
-define('VIEWS', THEME.'/views');
+define('OX_THEME_CONFIG', OX_THEME_ROOT.'/config');
+define('OX_THEME_CACHE', WP_CONTENT_DIR.'/cache');
+define('OX_THEME_VIEWS', OX_THEME_ROOT.'/views');
 
 /**
  * [en] Composer auto-loader check
  * [ru] Проверяем наличие загрузчика Composer
  */
-if (!file_exists($composer = THEME.'/vendor/autoload.php')) {
+if (!file_exists($composer = OX_THEME_ROOT.'/vendor/autoload.php')) {
     wp_die(
         'You must run <code>composer install</code> from the Oxboot theme directory.',
         'Autoloader not found.'
@@ -62,8 +62,8 @@ if (!file_exists($composer = THEME.'/vendor/autoload.php')) {
 require $composer;
 
 $config = [
-    'view' => require THEME.'/config/view.php'
+    'view' => require OX_THEME_ROOT.'/config/view.php'
 ];
 
 new Setup($config);
-new Template($config);
+new View($config);
