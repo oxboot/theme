@@ -3,5 +3,10 @@
     "brain/hierarchy": "^2.3",
     "duncan3dc/blade": "^4.0",
     "twig/twig": "^2.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "Oxboot\\Theme\\": "lib"
+    }
   }
 }
