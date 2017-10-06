@@ -4,4 +4,12 @@
 
 .l-grid {
   @include xy-grid;
+
+  &__cell {
+    @include xy-cell-base();
+
+    &--align-left {
+
+    }
+  }
 }
