@@ -1,4 +1,4 @@
-<header class="footer">
+<footer class="footer">
   <div class="l-container">
     <div class="l-grid">
       <div class="l-grid__cell l-grid__cell--align-left">
@@ -12,4 +12,4 @@
       </div>
     </div>
   </div>
-</header>
+</footer>
