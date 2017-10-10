@@ -28,7 +28,7 @@ class View
                                 $twig = new Twig_Environment($loader, ['cache' => OX_THEME_CACHE.'/twig']);
                                 echo $twig->render($template.$template_extension);
                                 break;
-                            case 'PHP':
+                            default:
                                 require $path;
                         }
                         exit;
