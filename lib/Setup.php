@@ -103,9 +103,32 @@ class Setup
                     'id'            => 'sidebar-secondary'
                 ] + $config);
             register_sidebar([
-                    'name'          => __('Footer Sidebar', 'oxboot'),
-                    'id'            => 'sidebar-footer'
+                    'name'          => __('Footer Sidebar One', 'oxboot'),
+                    'id'            => 'sidebar-footer-one'
                 ] + $config);
+            register_sidebar([
+                    'name'          => __('Footer Sidebar Two', 'oxboot'),
+                    'id'            => 'sidebar-footer-two'
+                ] + $config);
+            register_sidebar([
+                    'name'          => __('Footer Sidebar Three', 'oxboot'),
+                    'id'            => 'sidebar-footer-three'
+                ] + $config);
+        });
+
+        /**
+         * Display sidebar filter
+         */
+        add_filter('oxboot/display_sidebar', function ($display) {
+            static $display;
+            isset($display) || $display = in_array(true, [
+                // The sidebar will be displayed if any of the following return true
+                is_home(),
+                is_single(),
+                is_search(),
+                is_archive()
+            ]);
+            return $display;
         });
     }
 }
